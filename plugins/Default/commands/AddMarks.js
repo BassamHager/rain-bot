@@ -84,11 +84,11 @@ module.exports = class extends Command {
     for (const role of roles) {
       if (marks >= role.requiredMarks)
         try {
-          // await interaction.guild.members.cache
-          // .get(user.id)
-          // .roles.add(role.roleId);
+          await interaction.guild.members.cache
+            .get(user.id)
+            .roles.add(role.roleId);
 
-          user.roles.add(role.roleId);
+          // user.roles.add(role.roleId);
         } catch (err) {
           console.log(err);
         }
